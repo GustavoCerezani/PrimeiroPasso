@@ -1,0 +1,390 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F8FC;
+    color: #173B70;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background-color: #062746;
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header nav a {
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #FFD21F;
+}
+
+/* =========================
+   BOTÕES DO CABEÇALHO
+========================= */
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-lupa {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.barra-busca {
+    display: none;
+}
+
+.btn-entrar {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-cadastro {
+    background-color: #FFD21F;
+    color: #062746;
+    border-radius: 10px;
+    padding: 11px 17px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================
+   BANNER PRINCIPAL
+========================= */
+
+.hero {
+    background-color: #062746;
+    color: white;
+    min-height: 500px;
+    padding: 50px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    overflow: hidden;
+}
+
+/* TEXTO DO BANNER */
+
+.hero-texto {
+    width: 43%;
+    max-width: 470px;
+}
+
+.hero-texto h1 {
+    font-size: 42px;
+    line-height: 1.08;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.hero-texto h1 span {
+    color: #FFD21F;
+}
+
+.hero-texto p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 45px;
+    color: #E2EAF3;
+}
+
+.hero-texto p span {
+    color: #FFD21F;
+    font-weight: bold;
+}
+
+/* BOTÃO VER VAGAS */
+
+.btn-vagas {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #FFD21F;
+    color: #062746;
+    padding: 13px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-vagas:hover {
+    background-color: #FFE16B;
+    transform: translateY(-3px);
+}
+
+.btn-vagas img {
+    width: 22px;
+    height: auto;
+}
+
+/* =========================
+   IMAGEM DO JOVEM
+========================= */
+
+.hero-imagem {
+    width: 55%;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    background-image: url("img/img1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+}
+
+/* ESCONDE A IMAGEM ANTIGA DO HTML */
+
+.hero-imagem img {
+    display: none;
+}
+
+.hero-imagem h2 {
+    display: none;
+}
+
+/* =========================
+   DESTAQUES
+========================= */
+
+.destaques {
+    padding: 65px 5%;
+    text-align: center;
+}
+
+.destaques h2,
+.beneficios h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #062746;
+}
+
+.cards-destaques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* CARTÕES */
+
+.card {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    height: 100%;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #062746;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #66788A;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.beneficios {
+    background-color: #E5F0FA;
+    padding: 65px 5%;
+    text-align: center;
+}
+
+.beneficios > p {
+    margin-top: -15px;
+    margin-bottom: 35px;
+    font-size: 17px;
+}
+
+.beneficios > p span {
+    color: #D99B00;
+    font-weight: bold;
+}
+
+.cards-beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    background-color: #062746;
+    color: white;
+    padding: 35px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+footer nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer nav a {
+    font-size: 13px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 18px;
+    font-size: 21px;
+}
+
+/* =========================
+   AJUSTES PARA TABLETS
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .hero-texto h1 {
+        font-size: 34px;
+    }
+
+    .cards-destaques {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================
+   AJUSTES PARA CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        justify-content: center;
+    }
+
+    header nav {
+        justify-content: center;
+    }
+
+    .acoes {
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 7%;
+    }
+
+    .hero-texto,
+    .hero-imagem {
+        width: 100%;
+    }
+
+    .hero-texto h1 {
+        font-size: 35px;
+    }
+
+    .hero-texto p {
+        margin-bottom: 25px;
+    }
+
+    .hero-imagem {
+        min-height: 300px;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .cards-destaques,
+    .cards-beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer nav {
+        justify-content: center;
+    }
+}
