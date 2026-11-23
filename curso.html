@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <!--logo + menu-->
       <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
         <a href="index.html">Sobre</a>
-        <a href="curso.html">Curso</a>
+        <a href="curso.html" aria-current="page">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
         <a href="fale-conosco.html">Fale conosco</a>
@@ -25,145 +25,152 @@
         </button>
         <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
         <a href="login.html" class="btn-entrar">Entrar</a>
-        <a href="cadastro-usuario.html" class="btn-cadastro">Cadastre-se</a>
+        <a href="cadastro-usuario.html" class="btn cadastro">Cadastre-se</a>
       </div>
-    </header>
+    </header> <!--FIM CABEÇALHO-->
 
     <main>
+      <!-- ========== HERO: título da página + capelo ========== -->
       <section class="hero-cursos">
         <h1>Nossos <span>Cursos!</span></h1>
         <p>Aprenda, desenvolva suas habilidades e dê um passo à frente na sua carreira.</p>
-        <img src="img/icone/curso/icon11.png" alt="icone de capelo">
-      </section>
+        <img src="img/icones/curso/icone-capelo.png" alt="icone de capelo">
+      </section> <!-- fim .hero-cursos -->
 
+      <!--FILTROS menu cursos-->
       <section class="menu-cursos">
-        <!--filtros menu cursos-->
-        <div class="filtro">
-          <button>Todos</button>
-          <button><img src="img/icone/curso/icon12.png" alt="icone de notebook">Tecnologia</button>
-          <button><img src="img/icone/curso/icon13.png" alt="icone de grafico">Administração</button>
-          <button><img src="img/icone/curso/icon14.png" alt="icone de paleta">Design</button>
-          <button><img src="img/icone/curso/icon15.png" alt="icone de megafone">Marketing</button>
-          <button><img src="img/icone/curso/icon16.png" alt="icone de engrenagem">Outros</button>
+        <div class="filtros">
+          <button class="btn-filtro">Todos</button>
+          <button class="btn-filtro"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Tecnologia</button>
+          <button class="btn-filtro"><img src="img/icones/curso/icone-grafico.png" alt="icone de grafico">Administração</button>
+          <button class="btn-filtro"><img src="img/icones/curso/icone-paleta.png" alt="icone de paleta">Design</button>
+          <button class="btn-filtro"><img src="img/icones/curso/icone-megafone.png" alt="icone de megafone">Marketing</button>
+          <button class="btn-filtro"><img src="img/icones/curso/icone-engrenagem.png" alt="icone de engrenagem">Outros</button>
         </div>
-      </section>
+      </section> <!-- fim .menu-cursos-->
 
-      <section class="cards-curso">
-        <div class="card">
+      <!-- ========== LISTA DE CURSOS: 6 cards ========== -->
+      <section class="cards-cursos">
+        <!-- Card 1: Front-End (Tecnologia) -->
+        <div class="card-curso">
           <div class="imagem-curso">
-            <span class="tag"><img src="img/icone/curso/icon12.png" alt="icone de notebook">Tecnologia</span>
-            <img src="img/img curso/fundo1.png" alt="um computador com codigos">
+            <span class="tag"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Tecnologia</span>
+            <img src="img/curso/img-tecnologia.png" alt="Código de programação em uma tela de computador">
           </div>
 
           <h2>Introdução ao Front-End</h2>
           <p>Aprenda os fundamentos de HTML, CSS e JavaScript.</p>
 
           <p class="detalhes">
-            <img src="img/icone/curso/icon17.png" alt="icone de relogio"> 40h |
-            <img src="img/icone/curso/icon13.png" alt="icone com grafico"> Iniciante
+            <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 40h |
+            <img src="img/icones/curso/icone-grafico.png" alt="icone com grafico">Iniciante
           </p>
 
-          <a href="#">Acessar curso <img src="img/icone/icon_seta.png" alt="icone de seta"></a>
-        </div>
+          <button class="btn acessar-curso" data-card="previa-front-end">Acessar curso <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        </div> <!--fim card 1-->
 
-        <div class="card">
+        <!-- Card 2: Gestão de Carreira (Administração) -->
+        <div class="card-curso">
           <div class="imagem-curso">
-            <span class="tag"><img src="img/icone/curso/icon13.png" alt="icone de grafico">Administração</span>
-            <img src="img/img curso/fundo2.png" alt="mesa de trabalho com notebook">
+            <span class="tag"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Administração</span>
+            <img src="img/curso/img-administracao.png" alt="Mesa de trabalho com notebook, papéis e gráficos">
           </div>
 
           <h2>Gestão de Carreira</h2>
           <p>Planeje seu futuro e desenvolva suas habilidades profissionais.</p>
 
           <p class="detalhes">
-            <img src="img/icone/curso/icon17.png" alt="icone de relogio"> 30h |
-            <img src="img/icone/curso/icon13.png" alt="icone com grafico"> Iniciante 
+            <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 30h |
+            <img src="img/icones/curso/icone-grafico.png" alt="icone com grafico">Iniciante 
           </p>
 
-          <a href="#">Acessar curso <img src="img/icone/icon_seta.png" alt="icone de seta"></a>
-        </div>
+          <button class="btn acessar-curso" data-card="previa-gestao-de-carreira">Acessar curso <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        </div> <!--fim card 2-->
 
-        <div class="card">
+        <!-- Card 3: Design de Interiores (Design) -->
+        <div class="card-curso">
           <div class="imagem-curso">
-            <span class="tag"><img src="img/icone/curso/icon14.png" alt="icone de paleta">Design</span>
-            <img src="img/img curso/fundo3.png" alt="folhas com paleta de cores">
+            <span class="tag"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Design</span>
+            <img src="img/curso/img-design.png" alt="Paleta de cores e esboços de projetos sobre a mesa">
           </div>
 
           <h2>Design de Interiores Básico</h2>
           <p>Aprenda a criar artes incríveis e se destacar no mercado.</p>
 
           <p class="detalhes">
-            <img src="img/icone/curso/icon17.png" alt="icone de relogio"> 50h |
-            <img src="img/icone/curso/icon13.png" alt="icone com grafico"> Iniciante 
+            <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 50h |
+            <img src="img/icones/curso/icone-grafico.png" alt="icone com grafico">Iniciante 
           </p>
 
-          <a href="#">Acessar curso <img src="img/icone/icon_seta.png" alt="icone de seta"></a>
-        </div>
+          <button class="btn acessar-curso" data-card="previa-design">Acessar curso <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        </div> <!--fim card 3-->
 
-        <div class="card">
+        <!-- Card 4: Marketing Digital (Marketing) -->
+        <div class="card-curso">
           <div class="imagem-curso">
-            <span class="tag"><img src="img/icone/curso/icon15.png" alt="icone de megafone">Marketing</span>
-            <img src="img/img curso/fundo4.png" alt="Pessoa usando um notebook com ícones de anúncios na tela">
+            <span class="tag"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Marketing</span>
+            <img src="img/curso/img-marketing.png" alt="Pessoa usando um notebook com ícones de anúncios na tela">
           </div>
 
           <h2>Marketing Digital</h2>
           <p>Conheça as estratégias para divulgar marcas na internet.</p>
 
           <p class="detalhes">
-            <img src="img/icone/curso/icon17.png" alt="icone de relogio"> 35h |
-            <img src="img/icone/curso/icon13.png" alt="icone com grafico"> Iniciante 
+            <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 35h |
+            <img src="img/icones/curso/icone-grafico.png" alt="icone com grafico">Iniciante 
           </p>
 
-          <a href="#">Acessar curso <img src="img/icone/icon_seta.png" alt="icone de seta"></a>
-        </div>
+          <button class="btn acessar-curso" data-card="previa-marketing">Acessar curso <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        </div> <!--fim card 4-->
 
-        <div class="card">
+        <!-- Card 5: Comunicação e Atendimento (Administração) -->
+        <div class="card-curso">
           <div class="imagem-curso">
-            <span class="tag"><img src="img/icone/curso/icon13.png" alt="icone de grafico">Administração</span>
-            <img src="img/img curso/fundo5.png" alt="Atendente de fone de ouvido sorrindo em frente ao computador">
+            <span class="tag"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Administração</span>
+            <img src="img/curso/img-comunicacao.png" alt="Atendente de fone de ouvido sorrindo em frente ao computador">
           </div>
 
           <h2>Comunicação e Atendimento ao Cliente</h2>
           <p>Desenvolva habilidades de comunicação, aprenda a lidar com clientes e resolver problemas no ambiente de trabalho.</p>
 
           <p class="detalhes">
-            <img src="img/icone/curso/icon17.png" alt="icone de relogio"> 20h |
-            <img src="img/icone/curso/icon13.png" alt="icone com grafico"> Iniciante 
+            <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 20h |
+            <img src="img/icones/curso/icone-grafico.png" alt="icone com grafico">Iniciante 
           </p>
 
-          <a href="#">Acessar curso <img src="img/icone/icon_seta.png" alt="icone de seta"></a>
-        </div>
+          <button class="btn acessar-curso" data-card="previa-comunicacao">Acessar curso <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        </div> <!--fim card 5-->
 
-        <div class="card">
+        <!-- Card 6: Excel e Informática (Tecnologia) -->
+        <div class="card-curso">
           <div class="imagem-curso">
-            <span class="tag"><img src="img/icone/curso/icon12.png" alt="icone de notebook">Tecnologia</span>
-            <img src="img/img curso/fundo6.png" alt="Notebook com planilha e gráficos ao lado de uma xícara de café">
+            <span class="tag"><img src="img/icones/curso/icone-notebook.png" alt="icone de notebook">Tecnologia</span>
+            <img src="img/curso/img-informatica.png" alt="Notebook com planilha e gráficos ao lado de uma xícara de café">
           </div>
 
           <h2>Excel e Informática Básica</h2>
           <p>Aprenda a utilizar o Excel, Word e outras ferramentas essenciais para o mercado de trabalho.</p>
 
           <p class="detalhes">
-            <img src="img/icone/curso/icon17.png" alt="icone de relogio"> 25h |
-            <img src="img/icone/curso/icon13.png" alt="icone com grafico"> iniciante 
+            <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 25h |
+            <img src="img/icones/curso/icone-grafico.png" alt="icone com grafico">Iniciante 
           </p>
 
-          <a href="#">Acessar curso <img src="img/icone/icon_seta.png" alt="icone de seta"></a>
-        </div>
+          <button class="btn acessar-curso" data-card="previa-excel">Acessar curso <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        </div> <!-- fim card 6 -->
       </section>
 
-      <section class="banner">
-        <div>
-          <img src="img/icone/curso/icon18.png" alt="icone de trofeu">
-          <h2>Invista em <span>VOCÊ!</span></h2>
-          <p>Cursos gratuitos para você construir um futuro ainda melhor.</p>
-          <button>Explorar todos os cursos <img src="img/icone/icon_seta.png" alt="icone de seta"></button>
-        </div>
-      </section>
+      <!-- ========== BANNER FINAL: "Invista em VOCÊ!" ========== -->
+      <section class="banners banner-curso">
+        <img src="img/icones/curso/icone-trofeu.png" alt="icone de trofeu">
+        <h2>Invista em <span>VOCÊ!</span></h2>
+        <p>Cursos gratuitos para você construir um futuro ainda melhor.</p>
+        <button class="btn banner-explorar">Explorar todos os cursos <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+      </section> <!--fim banner-->
     </main>
 
+    <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
     <footer>
-      <!--logo + links + redes sociais-->
       <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
         <a href="index.html">Sobre</a>
@@ -179,11 +186,74 @@
         <a href="https://www.whatsapp.com" target="_blank" rel="noopener" aria-label="Whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
       </div>
-    </footer>   
+    </footer> <!-- fim rodapé -->
+
+    <!-- ========== Pop-Up de demonstração : 6 prévias ========== -->
+    <div class="cards-demonstracao">
+      <!-- CARD 1: Front-End -->
+      <div class="card-demo" id="previa-front-end">
+        <span class="etiqueta">PRÉVIA DO CURSO</span>
+        <h2>Introdução ao Front-End</h2>
+        <p>Aprenda os fundamentos de HTML, CSS e JavaScript.</p>
+        <p class="previa-detalhes">Duração: 40h • Iniciante</p>
+        <p>Prévia de navegação. O conteúdo das aulas não está disponível neste protótipo.</p>
+        <button class="btn amarelo-popup">Voltar aos cursos</button>
+      </div> <!-- fim card 1 -->
+
+      <!-- CARD 2: Gestão de Carreira -->
+      <div class="card-demo" id="previa-gestao-de-carreira">
+        <span class="etiqueta">PRÉVIA DO CURSO</span>
+        <h2>Gestão de Carreira</h2>
+        <p>Planeje seu futuro e desenvolva suas habilidades profissionais.</p>
+        <p class="previa-detalhes">Duração: 30h • Iniciante</p>
+        <p>Prévia de navegação. O conteúdo das aulas não está disponível neste protótipo.</p>
+        <button class="btn amarelo-popup">Voltar aos cursos</button>
+      </div> <!-- fim card 2-->
+
+      <!-- CARD 3: Design -->
+      <div class="card-demo" id="previa-design">
+        <span class="etiqueta">PRÉVIA DO CURSO</span>
+        <h2>Design de Interiores Básico</h2>
+        <p>Aprenda a criar artes incríveis e se destacar no mercado. </p>
+        <p class="previa-detalhes">Duração: 50h • Iniciante</p>
+        <p>Prévia de navegação. O conteúdo das aulas não está disponível neste protótipo.</p>
+        <button class="btn amarelo-popup">Voltar aos cursos</button>
+      </div> <!-- fim card 3-->
+
+      <!-- CARD 4: Marketing -->
+      <div class="card-demo" id="previa-marketing">
+        <span class="etiqueta">PRÉVIA DO CURSO</span>
+        <h2>Marketing Digital</h2>
+        <p>Conheça as estratégias para divulgar marcas na internet.</p>
+        <p class="previa-detalhes">Duração: 35h • Iniciante</p>
+        <p>Prévia de navegação. O conteúdo das aulas não está disponível neste protótipo.</p>
+        <button class="btn amarelo-popup">Voltar aos cursos</button>
+      </div> <!-- fim card 4-->
+
+      <!-- CARD 5: Comunicação -->
+      <div class="card-demo" id="previa-comunicacao">
+        <span class="etiqueta">PRÉVIA DO CURSO</span>
+        <h2>Comunicação e Atendimento ao Cliente</h2>
+        <p>Desenvolva habilidades de comunicação, aprenda a lidar com clientes e resolver problemas no ambiente de trabalho.</p>
+        <p class="previa-detalhes">Duração: 20h • Iniciante</p>
+        <p>Prévia de navegação. O conteúdo das aulas não está disponível neste protótipo.</p>
+        <button class="btn amarelo-popup">Voltar aos cursos</button>
+      </div> <!-- fim card 5-->
+
+      <!-- CARD 6: Excel -->
+      <div class="card-demo" id="previa-excel">
+        <span class="etiqueta">PRÉVIA DO CURSO</span>
+        <h2>Excel e Informática Básica</h2>
+        <p>Aprenda a utilizar o Excel, Word e outras ferramentas essenciais para o mercado de trabalho.</p>
+        <p class="previa-detalhes">Duração: 25h • Iniciante</p>
+        <p>Prévia de navegação. O conteúdo das aulas não está disponível neste protótipo.</p>
+        <button class="btn amarelo-popup">Voltar aos cursos</button>
+      </div> <!-- fim card 6-->
+    </div> <!-- fim pop up de demonstração -->
     <script src="script.js"></script>
   </body>
 </html>

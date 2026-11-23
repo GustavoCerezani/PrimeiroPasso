@@ -2,35 +2,120 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Fale com a equipe do Primeiro Passo e tire dúvidas sobre vagas, cadastro e parcerias.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
     <title>Fale Conosco | Primeiro Passo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <!--logo + menu-->
       <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
-        <a href="fale-conosco.html">Fale conosco</a>
+        <a href="fale-conosco.html" aria-current="page">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button class="btn-lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="btn-entrar">Entrar</button>
-        <a href="cadastro-usuario.html" class="btn-cadastro">Cadastre-se</a>
+        <button class="btn-lupa">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
+        <a href="login.html" class="btn-entrar">Entrar</a>
+        <a href="cadastro-usuario.html" class="btn cadastro">Cadastre-se</a>
       </div>
-    </header>
+    </header> <!--FIM CABEÇALHO-->
 
+    <main>
+      <!-- ========== HERO: texto à esquerda + formulário à direita ========== -->
+      <section class="hero-fale-conosco">
+        <!-- hero esquerda -->
+        <div class="hero-texto">
+          <h1>Vamos <span>Conversar?</span></h1>
+          <p>Tem alguma dúvida, sugestão ou precisa de ajuda? Conte para a gente.</p>
+          <div class="contato">
+            <img src="img/icones/fale-conosco/icone-balao-de-mensagem.png" alt="icone balao de mensagem">
+            <h2>Dúvidas sobre vagas</h2>
+            <p>Conte qual oportunidade você está buscando.</p>
+          </div>
+
+          <div class="contato">
+            <img src="img/icones/fale-conosco/icone-usuario-fale-conosco.png" alt="icone de usuario">
+            <h2>Ajuda com o seu cadastro</h2>
+            <p>Descreva a dificuldade para acessar ou criar sua conta.</p>
+          </div>
+
+          <div class="contato">
+            <img src="img/icones/fale-conosco/icone-predio-fale-conosco.png" alt="icone de predio">
+            <h2>Empresas e Parcerias</h2>
+            <p>Fale sobre sua empresa e como podemos te ajudar.</p>
+          </div>
+
+          <p>Sua opinião faz parte do nosso próximo passo. </p>
+
+        </div> <!-- fim hero texto -->
+
+        <!-- HERO FORMULÁRIO -->
+        <div class="hero-formulario">
+          <h2>Envie sua mensagem</h2>
+          <p>Preencha abaixo. Vamos entender como te ajudar.</p>
+
+          <form action="" method="post" class="form-contato">
+            <label for="nome">Nome Completo</label>
+            <input type="text" name="nome" id="nome" placeholder="Como podemos chamar você?" required> 
+
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail para contato" required>
+
+            <label for="assunto">Assunto</label>
+            <input type="text" name="assunto" id="assunto" placeholder="Sobre o que você quer conversar?" required>
+
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" placeholder="Escreva sua dúvida ou sugestão aqui" required></textarea>
+
+            <input type="checkbox" name="concordo" id="concordo" value="sim" required>
+            <label for="concordo">Concordo com o uso dos meus dados para receber uma resposta, conforme a política de privacidade.</label>
+
+            <button type="submit" class="btn enviar-mensagem">Enviar Mensagem</button>
+          </form>
+        </div> <!-- fim hero formulário -->
+      </section>
+
+      <!-- ========== DICAS ANTES DE ENVIAR: 3 cards numerados ========== -->
+      <section class="dicas">
+        <h2>Antes de enviar, veja estas dicas</h2>
+        <!-- CARD DICA 1 -->
+        <div class="card-dica">
+          <span>01</span>
+          <h3>Sobre uma vaga?</h3>
+          <p>Informe o nome da vaga e a cidade para explicar melhor sua dúvida.</p>
+          
+        </div> <!-- fim card dica 1 -->
+
+        <!-- CARD DICA 2 -->
+        <div class="card-dica">
+          <span>02</span>
+          <h3>Dificuldade no cadastro?</h3>
+          <p>Conte em qual etapa aconteceu. Não envie sua senha na mensagem.</p>
+        </div> <!-- fim card dica 2 -->
+
+        <!-- CARD DICA 3 -->
+        <div class="card-dica">
+          <span>03</span>
+          <h3>Representa uma empresa?</h3>
+          <p>Inclua o nome da empresa e o motivo do contato no campo de mensagem.</p>
+        </div> <!-- fim card dica 3 -->
+      </section>
+    </main>
+
+    <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
     <footer>
-        <!--logo + links + redes sociais-->
-        <a href="index.html" class="logo">Primeiro Passo</a>
+      <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#sobre">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
@@ -43,11 +128,23 @@
         <a href="https://www.whatsapp.com" target="_blank" rel="noopener" aria-label="Whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
       </div>
-    </footer>   
+    </footer> <!-- fim rodapé -->
+
+    <!-- ========== POP-UP: "Botão de Envio Acionado". Abre ao enviar o formulário ========== -->
+    <div class="cards-demonstracao">
+      <div class="card-demo">
+        <img src="img/icones/fale-conosco/icone-balao-card.png" alt="icone de balao de mensagem">
+        <span>Demonstração do protótipo</span>
+        <h2>Botão de Envio Acionado</h2>
+        <p>No site, este botão enviará sua mensagem para a equipe. Aqui você está navegando por uma demonstração: Nenhuma mensagem foi enviada.</p>
+        <button class="btn amarelo-popup">Voltar ao formulário</button>
+      </div>
+    </div> <!-- fim Pop Up -->
+
     <script src="script.js"></script>
   </body>
 </html>

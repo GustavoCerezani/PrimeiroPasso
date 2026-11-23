@@ -2,35 +2,117 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Encontre vagas de primeiro emprego, jovem aprendiz e estágio e dê o primeiro passo na sua carreira.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
     <title>Vagas | Primeiro Passo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <!--logo + menu-->
       <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
-        <a href="vagas.html">Vagas</a>
+        <a href="vagas.html" aria-current="page">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button class="btn-lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="btn-entrar">Entrar</button>
-        <a href="cadastro-usuario.html" class="btn-cadastro">Cadastre-se</a>
+        <button class="btn-lupa">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
+        <a href="login.html" class="btn-entrar">Entrar</a>
+        <a href="cadastro-usuario.html" class="btn cadastro">Cadastre-se</a>
       </div>
-    </header>
+    </header> <!--FIM CABEÇALHO-->
 
+    <main>
+      <!-- ========== HERO: Título + botão + foto ========== -->
+      <section class="hero-vagas">
+        <h1>Vagas de <span>Emprego</span></h1>
+        <img src="img/icones/icone-linha-unica.png" alt="icone de linha">
+        <p>Encontre a oportunidade ideal para dar o primeiro passo na sua carreira.</p>
+
+        <a href="#pesquisar-vagas" class="btn buscar-vagas">
+          <img src="img/icones/vagas/icone-lupa-vagas.png" alt="icone de lupa">Buscar Vagas <img src="img/icones/icone-seta.png" alt="icone de seta">
+        </a>
+        <img src="img/vagas/img-jovem.png" alt="jovem sorrindo">
+      </section> <!-- fim hero-->
+
+      <!-- ========== PESQUISA: cargo, cidade, área e botão ========== -->
+      <form action="vagas.html" method="get" id="pesquisar-vagas">
+        <h2><img src="img/icones/vagas/icone-lupa-vagas.png" alt="icone de lupa"> Pesquisar Vagas</h2>
+        <input type="search" name="cargo" id="cargo" placeholder="Digite o cargo ou área..." required>
+        <input type="text" name="cidade" id="cidade" placeholder="Sua cidade ou região" required>
+        <select name="area" id="area" required>
+          <option value="">Todas as Áreas</option>
+          <option value="tecnologia">Tecnologia</option>
+          <option value="administracao">Administração</option>
+          <option value="design">Design</option>
+          <option value="marketing">Marketing</option>
+          <option value="outros">Outros</option>
+        </select>
+        <button type="submit" class="btn pesquisa-buscar">Buscar</button>
+      </form> <!-- fim pesquisa-->
+
+      <!-- ========== VAGAS EM DESTAQUE: 3 vagas ========== -->
+      <section class="destaques-vagas">
+        <h2>Vagas em Destaque</h2>
+        <img src="img/icones/icone-linha-unica.png" alt="icone de linha">
+        <button class="btn-vagas">Ver todas as vagas <img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+        <div class="cards-vagas">
+          <!-- CARD 1: Auxiliar de Loja -->
+          <div class="card-vaga">
+            <img src="img/icones/vagas/icone-carrinho-de-mao.png" alt="icone de carrinho de mao">
+            <h3>Auxiliar de Loja</h3>
+            <p>São Paulo - SP</p>
+            <p class="detalhes-vagas">
+              <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 20h/Semanal
+            </p> 
+            <button class="btn-detalhes" data-card="vaga-auxiliar">Ver detalhes <img src="img/icones/vagas/icone-seta-branca.png" alt="icone de seta"></button>
+          </div> <!-- fim card 1-->
+
+          <!-- CARD 2: Jovem Aprendiz -->
+          <div class="card-vaga">
+            <img src="img/icones/vagas/icone-notebook-vagas.png" alt="icone de notebook">
+            <h3>Jovem Aprendiz (Administrativo) </h3>
+            <p>Cotia - SP</p>
+            <p class="detalhes-vagas">
+              <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 30h/Semanal
+            </p>
+            <button class="btn-detalhes" data-card="vaga-jovem">Ver detalhes <img src="img/icones/vagas/icone-seta-branca.png" alt="icone de seta"></button>
+          </div> <!-- fim card 2 -->
+
+          <!-- CARD 3: Atendente -->
+          <div class="card-vaga">
+            <img src="img/icones/vagas/icone-fone.png" alt="icone de fone">
+            <h3>Atendente</h3>
+            <p>Osasco - SP</p>
+            <p class="detalhes-vagas">
+              <img src="img/icones/icone-relogio.png" alt="icone de relogio">24h/Semanal
+            </p> 
+            <button class="btn-detalhes" data-card="vaga-atendente">Ver detalhes <img src="img/icones/vagas/icone-seta-branca.png" alt="icone de seta"></button>
+          </div> <!-- fim card 3 -->
+        </div>
+      </section> <!-- fim vagas em destaques -->
+
+      <!-- ========== BANNER: "Não Perca Tempo!" ========== -->
+      <section class="banners banner-vagas">
+        <img src="img/icones/vagas/icone-trofeu-vagas.png" alt="icone de trofeu">
+        <h2>Não perca tempo!</h2>
+        <p>Encontre sua vaga e construa um futuro melhor.</p>
+        <a href="#pesquisar-vagas" class="btn banner-buscar">Buscar vagas <img src="img/icones/icone-seta.png" alt="icone de seta"></a>
+      </section> <!-- fim banner -->
+    </main>
+
+    <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
     <footer>
-        <!--logo + links + redes sociais-->
-        <a href="index.html" class="logo">Primeiro Passo</a>
+      <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#sobre">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
@@ -43,11 +125,48 @@
         <a href="https://www.whatsapp.com" target="_blank" rel="noopener" aria-label="Whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
       </div>
-    </footer>   
+    </footer> <!--fim rodapé-->
+
+    <!-- ========== POP-UPS DETALHES DAS VAGAS : 3 prévias ========== -->
+    <div class="cards-demonstracao">
+      <!-- CARD 1: Auxiliar de Loja -->
+      <div class="card-demo" id="vaga-auxiliar">
+        <span class="etiqueta">DETALHES DA VAGA</span>
+        <h2>Auxiliar de Loja</h2>
+        <p>São Paulo - SP</p>
+        <p class="previa-detalhes">Carga horária: 20h/semanal</p>
+        <p>Estas são as informações disponíveis no anúncio. A navegação até o cadastro não envia uma candidatura.</p>
+        <a href="cadastro-usuario.html" class="btn amarelo-popup">Ir ao cadastro</a>
+        <button class="btn-claro">Voltar às vagas</button>
+      </div> <!-- fim card 1-->
+
+      <!-- CARD 2: Jovem Aprendiz -->
+      <div class="card-demo" id="vaga-jovem">
+        <span class="etiqueta">DETALHES DA VAGA</span>
+        <h2>Jovem Aprendiz (Administrativo)</h2>
+        <p>Cotia - SP</p>
+        <p class="previa-detalhes">Carga horária: 30h/semanal</p>
+        <p>Estas são as informações disponíveis no anúncio. A navegação até o cadastro não envia uma candidatura.</p>
+        <a href="cadastro-usuario.html" class="btn amarelo-popup">Ir ao cadastro</a>
+        <button class="btn-claro">Voltar às vagas</button>
+      </div> <!-- fim card 2-->
+
+      <!--CARD 3: Atendente -->
+      <div class="card-demo" id="vaga-atendente">
+        <span class="etiqueta">DETALHES DA VAGA</span>
+        <h2>Atendente</h2>
+        <p>Osasco - SP</p>
+        <p class="previa-detalhes">Carga horária: 24h/semanal</p>
+        <p>Estas são as informações disponíveis no anúncio. A navegação até o cadastro não envia uma candidatura.</p>
+        <a href="cadastro-usuario.html" class="btn amarelo-popup">Ir ao cadastro</a>
+        <button class="btn-claro">Voltar às vagas</button>
+      </div> <!-- fim card 3-->
+    </div> <!-- fim pop up de demonstração -->
+
     <script src="script.js"></script>
   </body>
 </html>
