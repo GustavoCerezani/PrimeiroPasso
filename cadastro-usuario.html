@@ -2,35 +2,97 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Crie sua conta no Primeiro Passo e tenha acesso a vagas, dicas de carreira e muito mais.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
     <title>Cadastre-se | Primeiro Passo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <!--logo + menu-->
       <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button class="btn-lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="btn-entrar">Entrar</button>
-        <a href="cadastro-usuario.html" class="btn-cadastro">Cadastre-se</a>
+        <button type="button" class="btn-lupa">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
+        <a href="login.html" class="btn-entrar">Entrar</a>
+        <a href="cadastro-usuario.html" class="btn cadastro">Cadastre-se</a>
       </div>
-    </header>
+    </header> <!-- fim cabeçalho -->
 
+    <main>
+      <!-- ========== HERO: texto à esquerda + foto + formulário à direita ========== -->
+      <section class="hero-usuario">
+        <div class="texto">
+          <h1>Faça seu <span>Cadastro!</span></h1>
+          <p>Crie sua conta e tenha acesso a vagas, dicas de carreira e muito mais.</p>
+          <div class="vantagem">
+            <img src="img/icones/cadastro-usuario/icone-mala-cadastro.png" alt="icone de mala">
+            <h2>Encontre vagas de primeiro emprego</h2>
+          </div>
+
+          <div class="vantagem">
+            <img src="img/icones/cadastro-usuario/icone-lampada-cadastro.png" alt="icone de lampada">
+            <h2>Receba dicas de carreira</h2>
+          </div>
+
+          <div class="vantagem">
+            <img src="img/icones/cadastro-usuario/icone-grafico-cadastro.png" alt="icone de grafico">
+            <h2>Construa um futuro melhor</h2>
+          </div>
+        </div> <!-- fim texto -->
+
+        <img src="img/cadastro-usuario/img-hero-cadastro.png" alt="jovem sorrindo">
+
+        <!-- Lado direito: formulário de cadastro -->
+        <div class="formulario">
+          <img src="img/icones/cadastro-usuario/icone-usuario-cadastro.png" alt="icone usuario">
+          <h2>Cadastro</h2>
+          <p>Preencha seus dados abaixo para criar a sua conta</p>
+
+          <form action="" method="post" class="form-cadastro">
+
+            <img src="img/icones/icone-usuario.png" alt="icone de usuario">
+            <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+
+            <img src="img/icones/icone-carta.png" alt="icone de carta">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+
+            <img src="img/icones/cadastro-usuario/icone-cadeado.png" alt="icone de cadeado">
+            <input type="password" name="senha" id="senha" placeholder="Senha" required>
+
+            <img src="img/icones/cadastro-usuario/icone-localizacao-formulario.png" alt="icone de localizacao">
+            <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+
+            <input type="checkbox" name="termos" id="termos" required>
+            <label for="termos">Eu aceito os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.</label> 
+
+            <button type="submit" class="btn cadastrar-usuario"><img src="img/icones/cadastro-usuario/icone-usuario-mais.png" alt="icone adicionar usuario">Cadastrar</button>
+
+            <img src="img/icones/cadastro-usuario/icone-linha-esquerda.png" alt="icone de linha"> ou <img src="img/icones/cadastro-usuario/icone-linha-direita.png" alt="icone de linha">
+
+            <button type="button" class="btn-google" data-card="cadastro-google"><img src="img/icones/cadastro-usuario/icone-google.png" alt="icone do Google">Cadastrar com o Google</button>
+
+            <p>Já tem uma conta?<a href="login.html"> Faça Login</a></p>
+          </form> <!-- fim .form-cadastro -->
+        </div>
+      </section> <!-- fim .hero-usuario -->
+    </main>
+
+    <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
     <footer>
-        <!--logo + links + redes sociais-->
-        <a href="index.html" class="logo">Primeiro Passo</a>
+      <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#sobre">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
@@ -43,11 +105,32 @@
         <a href="https://www.whatsapp.com" target="_blank" rel="noopener" aria-label="Whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
       </div>
-    </footer>   
+    </footer> <!--fim rodapé-->
+
+    <!-- ========== POP-UPS DE DEMONSTRAÇÃO: 2 cards, escondidos ========== -->
+    <div class="cards-demonstracao">
+      <!-- Pop-up 1: cadastro -->
+      <div class="card-demo" id="popup-cadastro">
+        <img src="img/icones/icone-usuario.png" alt="icone de usuario">
+        <span>Demonstração do protótipo</span>
+        <h2>Botão de Cadastro Acionado</h2>
+        <p>No site, esta ação criará uma conta. Neste protótipo, nenhum dado é salvo e nenhum cadastro é realizado.</p>
+        <button type="button" class="btn amarelo-popup">Voltar ao formulário</button>
+      </div> <!-- fim pop up 1 -->
+
+      <!-- Pop-up 2: Google -->
+      <div class="card-demo" id="cadastro-google">
+        <img src="img/icones/icone-usuario.png" alt="icone de usuario">
+        <span>Demonstração do protótipo</span>
+        <h2>Cadastro com o Google</h2>
+        <p>No site, este botão abrirá a autenticação do Google. Nesta demonstração, não há conexão com a sua conta e nem coleta de dados.</p>
+        <button type="button" class="btn amarelo-popup">Voltar ao formulário</button>
+      </div> <!-- fim pop up 2 -->
+    </div> <!-- fim pop up -->
     <script src="script.js"></script>
   </body>
 </html>

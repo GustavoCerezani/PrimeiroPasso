@@ -2,35 +2,99 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Cadastre sua empresa no Primeiro Passo, divulgue vagas e encontre novos talentos.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
     <title>Cadastre sua empresa | Primeiro Passo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <!--logo + menu-->
       <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
-        <a href="para-empresas.html">Para empresas</a>
+        <a href="para-empresas.html" aria-current="page">Para empresas</a>
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button class="btn-lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="btn-entrar">Entrar</button>
-        <a href="cadastro-usuario.html" class="btn-cadastro">Cadastre-se</a>
+        <button type="button" class="btn-lupa">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
+        <a href="login.html" class="btn-entrar">Entrar</a>
+        <a href="cadastro-empresas.html" class="btn cadastro">Cadastre-se</a>
       </div>
-    </header>
+    </header> <!-- fim cabeçalho -->
 
+    <main>
+      <!-- ========== HERO: texto à esquerda + foto + formulário à direita ========== -->
+      <section class="hero-cadastro-empresas">
+        <div class="hero-cards">
+          <h1>Cadastre sua <span>Empresa!</span></h1>
+          <p>Encontre novos talentos e ajude jovens a dar o primeiro passo na carreira.</p>
+
+          <div class="vantagem">
+            <img src="img/icones/cadastro-empresas/icone-predio-claro.png" alt="icone de predio">
+            <h2>Divulge suas vagas</h2>
+          </div>
+
+          <div class="vantagem">
+            <img src="img/icones/cadastro-empresas/icone-usuario-cadastro.png" alt="icone de usuario">
+            <h2>Encontre novos talentos</h2>
+          </div>
+
+          <div class="vantagem">
+            <img src="img/icones/cadastro-empresas/icone-formulario-cadastro.png" alt="icone de formulario">
+            <h2>Construa futuros com a gente</h2>
+          </div>
+        </div> <!-- fim hero-cards -->
+
+        <img src="img/cadastro-empresa/img-hero-cadastro.png" alt="jovem de lado sorrindo">
+
+        <!-- Lado direito: formulário de cadastro da empresa -->
+        <div class="hero-formulario">
+          <img src="img/icones/cadastro-empresas/icone-predio-escuro.png" alt="icone de predio"> 
+          <h2>Cadastro de Empresas</h2>
+          <p>Preencha os dados para encontrar novos talentos</p>
+
+          <form action="" method="post" class="form-cadastro">
+            <label for="nome-empresa">Nome da empresa</label>
+            <input type="text" nome="nome-empresa" id="nome-empresa" placeholder="Digite a razão social ou nome fantasia" required>
+
+            <label for="cnpj">CNPJ</label>
+            <input type="text" name="cnpj" id="cnpj" placeholder="00.000.000/0000-00" required>
+
+            <label for="responsavel">Nome do responsável</label>
+            <input type="text" name="responsalvel" id="responsavel" placeholder="Digite seu nome completo" required>
+
+            <label for="email">E-mail corporativo</label>
+            <input type="email" name="email" id="email" placeholder="nome@suaempresa.com.br" required>
+
+            <label for="cidade">Cidade</label> 
+            <input type="text" name="cidade" id="cidade" placeholder="Cidade e estado" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Crie uma senha com pelo menos 8 caracteres" required>
+
+            <input type="checkbox" name="termos" id="termos" required>
+            <label for="termos">Eu aceito os <a href="#">Termos de uso</a> e a <a href="#">Política de Privacidade</a>.</label>
+
+            <button type="submit" class="btn empresa-cadastro">Cadastrar Empresa</button>
+
+            <p>Já tem uma conta?<a href="login.html">Faça Login</a></p>
+          </form> <!-- fim .form-cadastro -->
+        </div>
+      </section> <!-- fim .hero-cadastro-empresas -->
+    </main>
+
+    <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
     <footer>
-        <!--logo + links + redes sociais-->
-        <a href="index.html" class="logo">Primeiro Passo</a>
+      <a href="index.html" class="logo">Primeiro Passo</a>
       <nav>
-        <a href="#sobre">Sobre</a>
+        <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
         <a href="vagas.html">Vagas</a>
         <a href="para-empresas.html">Para empresas</a>
@@ -43,11 +107,22 @@
         <a href="https://www.whatsapp.com" target="_blank" rel="noopener" aria-label="Whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-brands fa-facebook"></i>
         </a>
       </div>
-    </footer>   
+    </footer> <!--fim rodapé-->
+
+    <!-- ========== POP-UP DE DEMONSTRAÇÃO: escondido, abre ao enviar o formulário ========== -->
+    <div class="cards-demonstracao">
+      <div class="card-demo" id="popup-cadastro">
+        <img src="img/icones/icone-usuario.png" alt="icone de usuario">
+        <span>Demonstração do protótipo</span>
+        <h2>Botão de Cadastro Acionado</h2>
+        <p>No site, esta ação criará uma conta. Neste protótipo, nenhum dado é salvo e nenhum cadastro é realizado.</p>
+        <button type="button" class="btn amarelo-popup" >Voltar ao formulário</button>
+      </div>
+    </div> <!-- fim pop up -->
     <script src="script.js"></script>
   </body>
 </html>
