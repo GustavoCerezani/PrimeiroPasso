@@ -1,390 +1,1355 @@
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
+* =====================================================
+   PRIMEIRO PASSO
+===================================================== */
+
+/* 1. CONFIGURAÇÕES GERAIS */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap');
+
+:root {
+  --azul: #102a43;
+  --azul-escuro: #081d33;
+  --azul-medio: #1d4568;
+  --azul-claro: #eaf2f8;
+  --amarelo: #ffca28;
+  --amarelo-claro: #fff4c7;
+  --branco: #ffffff;
+  --fundo: #f7f9fc;
+  --texto: #263746;
+  --texto-suave: #617181;
+  --borda: #dce4ec;
+  --sombra: 0 12px 30px rgba(8, 29, 51, .10);
+  --raio: 18px;
+  --largura: 1180px;
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F5F8FC;
-    color: #173B70;
+  min-width: 320px;
+  background: var(--branco);
+  color: var(--texto);
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  color: inherit;
+  text-decoration: none;
 }
 
-/* =========================
-   CABEÇALHO
-========================= */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1, h2, h3, h4 {
+  color: var(--azul);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.15rem, 5vw, 3.7rem);
+}
+
+h2 {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+h3 {
+  font-size: 1.12rem;
+}
+
+p {
+  color: var(--texto-suave);
+}
+
+h1 span,
+h2 span,
+p span {
+  color: #d99d00;
+}
+
+/* 2. CABEÇALHO */
 
 header {
-    background-color: #062746;
-    color: white;
-    padding: 20px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 86px;
+  padding: 15px max(5%, calc((100% - var(--largura)) / 2));
+  background: var(--branco);
+  border-bottom: 1px solid rgba(16, 42, 67, .08);
+  box-shadow: 0 5px 20px rgba(8, 29, 51, .045);
 }
 
 .logo {
-    font-size: 23px;
-    font-weight: bold;
-    white-space: nowrap;
+  flex: 0 0 auto;
+  color: var(--azul);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -.8px;
 }
 
-header nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+.logo::first-letter {
+  color: #d99d00;
 }
 
-header nav a {
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
+header nav,
+footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.8vw, 25px);
 }
 
-header nav a:hover {
-    color: #FFD21F;
+header nav a,
+footer nav a {
+  position: relative;
+  color: var(--azul);
+  font-size: .94rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-/* =========================
-   BOTÕES DO CABEÇALHO
-========================= */
+header nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 3px;
+  background: var(--amarelo);
+  border-radius: 5px;
+  content: '';
+  transform: scaleX(0);
+  transition: transform .2s ease;
+}
+
+header nav a:hover::after,
+header nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* 3. AÇÕES DO CABEÇALHO */
 
 .acoes {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 0 0 auto;
 }
 
 .btn-lupa {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--azul);
+  background: var(--azul-claro);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-lupa:hover {
+  background: var(--amarelo);
+  transform: translateY(-2px);
 }
 
 .barra-busca {
-    display: none;
+  width: 175px;
+  min-width: 0;
+  padding: 10px 13px;
+  color: var(--azul);
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 30px;
+}
+
+.barra-busca:focus {
+  border-color: var(--amarelo);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 202, 40, .18);
+}
+
+.btn-entrar,
+.btn-cadastro,
+.btn.cadastro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 17px;
+  border-radius: 25px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: .2s;
 }
 
 .btn-entrar {
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 10px 16px;
-    font-size: 13px;
-    font-weight: bold;
+  color: var(--azul);
+  background: transparent;
+  border: 1.5px solid var(--azul);
 }
 
-.btn-cadastro {
-    background-color: #FFD21F;
-    color: #062746;
-    border-radius: 10px;
-    padding: 11px 17px;
-    font-size: 13px;
-    font-weight: bold;
+.btn-entrar:hover {
+  color: var(--branco);
+  background: var(--azul);
 }
 
-/* =========================
-   BANNER PRINCIPAL
-========================= */
+.btn-cadastro,
+.btn.cadastro {
+  color: var(--azul-escuro);
+  background: var(--amarelo);
+  border: 1.5px solid var(--amarelo);
+}
+
+.btn-cadastro:hover,
+.btn.cadastro:hover {
+  background: #f0b900;
+  box-shadow: 0 6px 16px rgba(217, 157, 0, .22);
+  transform: translateY(-2px);
+}
+
+/* 4. BOTÕES GERAIS */
+
+.btn,
+.vagas-index,
+.anunciar-vagas,
+.cadastrar-empresa,
+.buscar-vagas,
+.pesquisa-buscar,
+.banner-buscar,
+.amarelo-popup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 23px;
+  color: var(--azul-escuro);
+  background: var(--amarelo);
+  border: 0;
+  border-radius: 30px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover,
+.vagas-index:hover,
+.anunciar-vagas:hover,
+.cadastrar-empresa:hover,
+.buscar-vagas:hover,
+.pesquisa-buscar:hover,
+.banner-buscar:hover,
+.amarelo-popup:hover {
+  background: #f0b900;
+  box-shadow: 0 9px 20px rgba(217, 157, 0, .22);
+  transform: translateY(-3px);
+}
+
+.btn img,
+.vagas-index img,
+.anunciar-vagas img,
+.cadastrar-empresa img,
+.buscar-vagas img,
+.banner-buscar img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* =====================================================
+   5. PÁGINA INICIAL
+===================================================== */
+
+/* HERO */
 
 .hero {
-    background-color: #062746;
-    color: white;
-    min-height: 500px;
-    padding: 50px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 80px);
+  max-width: var(--largura);
+  min-height: 570px;
+  margin: 0 auto;
+  padding: 65px 28px 75px;
 }
 
-/* TEXTO DO BANNER */
-
 .hero-texto {
-    width: 43%;
-    max-width: 470px;
+  max-width: 590px;
 }
 
 .hero-texto h1 {
-    font-size: 42px;
-    line-height: 1.08;
-    margin-bottom: 25px;
-    font-weight: bold;
-}
-
-.hero-texto h1 span {
-    color: #FFD21F;
+  margin-bottom: 22px;
 }
 
 .hero-texto p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 45px;
-    color: #E2EAF3;
+  max-width: 560px;
+  margin-bottom: 30px;
+  font-size: 1.08rem;
+  line-height: 1.85;
 }
 
 .hero-texto p span {
-    color: #FFD21F;
-    font-weight: bold;
+  color: var(--azul);
+  font-weight: 900;
 }
-
-/* BOTÃO VER VAGAS */
-
-.btn-vagas {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: #FFD21F;
-    color: #062746;
-    padding: 13px 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn-vagas:hover {
-    background-color: #FFE16B;
-    transform: translateY(-3px);
-}
-
-.btn-vagas img {
-    width: 22px;
-    height: auto;
-}
-
-/* =========================
-   IMAGEM DO JOVEM
-========================= */
 
 .hero-imagem {
-    width: 55%;
-    min-height: 430px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    background-image: url("img/img1.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  padding: 22px;
+  background: var(--amarelo-claro);
+  border-radius: 48% 48% 28px 28px;
 }
 
-/* ESCONDE A IMAGEM ANTIGA DO HTML */
-
-.hero-imagem img {
-    display: none;
+.hero-imagem > img:first-child {
+  width: min(100%, 390px);
+  max-height: 365px;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .hero-imagem h2 {
-    display: none;
+  max-width: 370px;
+  margin-top: 4px;
+  color: var(--azul);
+  font-size: 1.25rem;
+  text-align: center;
 }
 
-/* =========================
-   DESTAQUES
-========================= */
+.hero-imagem > img:last-child {
+  width: 105px;
+  height: auto;
+  margin-top: 12px;
+  object-fit: contain;
+}
+
+/* DESTAQUES E BENEFÍCIOS */
+
+.destaques,
+.beneficios {
+  padding: 75px max(5%, calc((100% - var(--largura)) / 2));
+  text-align: center;
+}
 
 .destaques {
-    padding: 65px 5%;
-    text-align: center;
+  background: var(--fundo);
 }
 
-.destaques h2,
-.beneficios h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    color: #062746;
+.destaques > h2,
+.beneficios > h2 {
+  margin-bottom: 35px;
 }
 
-.cards-destaques {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.cards-destaques,
+.cards-beneficios {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  max-width: var(--largura);
+  margin: 0 auto;
 }
 
-/* CARTÕES */
+.cards-destaques > a {
+  display: block;
+  height: 100%;
+}
 
+/* CARDS */
+
+.card-destaque,
+.card-beneficio,
 .card {
-    background-color: white;
-    padding: 25px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-    height: 100%;
-    transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 230px;
+  padding: 27px 20px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: 0 7px 20px rgba(8, 29, 51, .045);
+  text-align: center;
+  transition: .22s;
 }
 
+.card-destaque:hover,
+.card-beneficio:hover,
 .card:hover {
-    transform: translateY(-5px);
+  border-color: var(--amarelo);
+  box-shadow: var(--sombra);
+  transform: translateY(-6px);
 }
 
-.card img {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-    margin-bottom: 15px;
+.card-destaque > img,
+.card-beneficio > img,
+.card > img {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 17px;
+  object-fit: contain;
 }
 
+.card-destaque h3,
+.card-beneficio h3,
 .card h3 {
-    color: #062746;
-    font-size: 17px;
-    margin-bottom: 12px;
+  margin-bottom: 9px;
+  font-size: 1.05rem;
 }
 
+.card-destaque p,
+.card-beneficio p,
 .card p {
-    color: #66788A;
-    font-size: 14px;
-    line-height: 1.5;
+  font-size: .94rem;
+  line-height: 1.55;
 }
-
-/* =========================
-   BENEFÍCIOS
-========================= */
 
 .beneficios {
-    background-color: #E5F0FA;
-    padding: 65px 5%;
-    text-align: center;
+  background: var(--branco);
 }
 
 .beneficios > p {
-    margin-top: -15px;
-    margin-bottom: 35px;
-    font-size: 17px;
+  margin: -20px 0 35px;
+  font-size: 1.08rem;
 }
 
 .beneficios > p span {
-    color: #D99B00;
-    font-weight: bold;
+  color: #d99d00;
+  font-weight: 900;
 }
 
 .cards-beneficios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* =========================
-   RODAPÉ
-========================= */
+.card-beneficio {
+  min-height: 220px;
+  background: #fbfcfe;
+}
+
+/* =====================================================
+   6. PÁGINA PARA EMPRESAS
+===================================================== */
+
+/* HERO EMPRESAS */
+
+.hero-para-empresas {
+  display: grid;
+  grid-template-columns: .9fr 1fr;
+  align-items: center;
+  gap: 50px;
+  max-width: var(--largura);
+  min-height: 460px;
+  margin: 0 auto;
+  padding: 65px 28px;
+}
+
+.hero-para-empresas > img {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: var(--sombra);
+}
+
+.hero-para-empresas h1 {
+  align-self: end;
+}
+
+.hero-para-empresas h1 span {
+  color: #d99d00;
+}
+
+.hero-para-empresas p {
+  max-width: 510px;
+  font-size: 1.1rem;
+}
+
+.hero-para-empresas .anunciar-vagas {
+  justify-self: start;
+}
+
+/* VANTAGENS PARA EMPRESAS */
+
+.anunciar {
+  padding: 70px max(5%, calc((100% - var(--largura)) / 2));
+  background: var(--fundo);
+  text-align: center;
+}
+
+.anunciar > img {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 15px;
+  object-fit: contain;
+}
+
+.anunciar > h2 {
+  margin-bottom: 35px;
+}
+
+.cards-para-empresas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: var(--largura);
+  margin: 0 auto;
+}
+
+.card-empresa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 205px;
+  padding: 25px 18px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: 0 7px 20px rgba(8, 29, 51, .045);
+  transition: .2s;
+}
+
+.card-empresa:hover {
+  border-color: var(--amarelo);
+  box-shadow: var(--sombra);
+  transform: translateY(-5px);
+}
+
+.card-empresa img {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  object-fit: contain;
+}
+
+.card-empresa h3 {
+  max-width: 230px;
+  font-size: 1rem;
+}
+
+/* =====================================================
+   7. BANNERS
+===================================================== */
+
+.banners {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin: 65px auto;
+  padding: 55px 25px;
+  color: var(--branco);
+  background: var(--azul);
+  border-radius: 26px;
+  text-align: center;
+}
+
+.banner-para-empresas,
+.banner-vagas {
+  width: min(calc(100% - 48px), 1080px);
+}
+
+.banners::before,
+.banners::after {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 30px solid rgba(255, 202, 40, .12);
+  border-radius: 50%;
+  content: '';
+}
+
+.banners::before {
+  top: -105px;
+  left: -75px;
+}
+
+.banners::after {
+  right: -80px;
+  bottom: -120px;
+}
+
+.banners > * {
+  position: relative;
+  z-index: 1;
+}
+
+.banners > img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.banners h2 {
+  color: var(--branco);
+}
+
+.banners p {
+  color: #e3ebf2;
+}
+
+/* DÚVIDAS */
+
+.duvidas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 35px 20px 75px;
+  text-align: center;
+}
+
+.duvidas > img {
+  width: 100px;
+  max-height: 12px;
+  object-fit: contain;
+}
+
+.duvidas p {
+  margin-bottom: 8px;
+}
+
+.btn-duvidas {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  color: var(--azul);
+  background: var(--amarelo-claro);
+  border: 1px solid #f2d66f;
+  border-radius: 30px;
+  font-weight: 900;
+  transition: .2s;
+}
+
+.btn-duvidas:hover {
+  background: var(--amarelo);
+  transform: translateY(-2px);
+}
+
+.btn-duvidas img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* =====================================================
+   8. PÁGINA DE VAGAS
+===================================================== */
+
+/* HERO VAGAS */
+
+.hero-vagas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 410px;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 65px 48% 65px 28px;
+}
+
+.hero-vagas h1 {
+  margin-bottom: 10px;
+}
+
+.hero-vagas h1 span {
+  color: #d99d00;
+}
+
+.hero-vagas > img:first-of-type {
+  width: 105px;
+  height: 12px;
+  margin: 0 0 18px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.hero-vagas p {
+  max-width: 490px;
+  margin-bottom: 22px;
+  font-size: 1.08rem;
+}
+
+.hero-vagas > img:last-of-type {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+  width: min(42%, 440px);
+  max-height: 390px;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* PESQUISA DE VAGAS */
+
+#pesquisar-vagas {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr auto;
+  align-items: end;
+  gap: 14px;
+  max-width: 1080px;
+  margin: 0 auto 75px;
+  padding: 27px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 22px;
+  box-shadow: var(--sombra);
+}
+
+#pesquisar-vagas h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-column: 1 / -1;
+  margin-bottom: 4px;
+  font-size: 1.45rem;
+}
+
+#pesquisar-vagas h2 img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+}
+
+#pesquisar-vagas input,
+#pesquisar-vagas select {
+  width: 100%;
+  min-height: 49px;
+  padding: 11px 14px;
+  color: var(--azul);
+  background: #fbfcfe;
+  border: 1px solid var(--borda);
+  border-radius: 11px;
+  outline: none;
+}
+
+#pesquisar-vagas input:focus,
+#pesquisar-vagas select:focus {
+  border-color: var(--amarelo);
+  box-shadow: 0 0 0 3px rgba(255, 202, 40, .18);
+}
+
+#pesquisar-vagas input::placeholder {
+  color: #8a98a6;
+}
+
+/* VAGAS EM DESTAQUE */
+
+.destaques-vagas {
+  padding: 70px max(5%, calc((100% - var(--largura)) / 2));
+  background: var(--fundo);
+  text-align: center;
+}
+
+.destaques-vagas > h2 {
+  margin-bottom: 10px;
+}
+
+.destaques-vagas > img {
+  width: 100px;
+  height: 12px;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
+
+.destaques-vagas > .btn-vagas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  color: var(--azul);
+  background: var(--amarelo);
+  border: 0;
+  border-radius: 25px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.destaques-vagas > .btn-vagas img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.destaques-vagas > .btn-vagas:hover {
+  background: #f0b900;
+  transform: translateY(-2px);
+}
+
+/* CARDS DAS VAGAS */
+
+.cards-vagas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: var(--largura);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.card-vaga {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 270px;
+  padding: 26px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: 0 7px 20px rgba(8, 29, 51, .05);
+  transition: .2s;
+}
+
+.card-vaga:hover {
+  border-color: var(--amarelo);
+  box-shadow: var(--sombra);
+  transform: translateY(-5px);
+}
+
+.card-vaga > img:first-child {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 17px;
+  object-fit: contain;
+}
+
+.card-vaga h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.card-vaga > p {
+  margin-bottom: 7px;
+}
+
+.card-vaga .detalhes-vagas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 18px;
+  color: var(--azul-medio);
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+.card-vaga .detalhes-vagas img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* BOTÃO VER DETALHES */
+
+.btn-detalhes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 9px 16px;
+  color: var(--branco);
+  background: var(--azul);
+  border: 0;
+  border-radius: 24px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-detalhes:hover {
+  background: var(--azul-medio);
+  transform: translateY(-2px);
+}
+
+.btn-detalhes img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+/* POP-UPS DAS VAGAS */
+
+.cards-demonstracao {
+  position: relative;
+  z-index: 150;
+}
+
+.card-demo {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  width: min(92vw, 480px);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 34px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 22px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, .25);
+  transform: translate(-50%, -50%);
+}
+
+.card-demo:target,
+.card-demo.ativo {
+  display: block;
+}
+
+.card-demo .etiqueta {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 11px;
+  color: var(--azul);
+  background: var(--amarelo-claro);
+  border-radius: 20px;
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.card-demo h2 {
+  margin-bottom: 10px;
+  font-size: 1.65rem;
+}
+
+.card-demo p {
+  margin: 10px 0;
+}
+
+.card-demo .previa-detalhes {
+  color: var(--azul);
+  font-weight: 800;
+}
+
+.card-demo .btn {
+  margin-top: 12px;
+}
+
+.btn-claro {
+  min-height: 44px;
+  margin: 12px 0 0 8px;
+  padding: 9px 16px;
+  color: var(--azul);
+  background: var(--azul-claro);
+  border: 0;
+  border-radius: 24px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-claro:hover {
+  background: #d8e6f1;
+}
+
+/* =====================================================
+   9. RODAPÉ
+===================================================== */
 
 footer {
-    background-color: #062746;
-    color: white;
-    padding: 35px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 35px max(5%, calc((100% - var(--largura)) / 2));
+  background: var(--azul-escuro);
+}
+
+footer .logo {
+  color: var(--branco);
+}
+
+footer .logo::first-letter {
+  color: var(--amarelo);
 }
 
 footer nav {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 footer nav a {
-    font-size: 13px;
+  color: #edf3f8;
+  font-size: .9rem;
+}
+
+footer nav a:hover {
+  color: var(--amarelo);
 }
 
 .redes-sociais {
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.redes-sociais a {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  color: var(--azul-escuro);
+  background: var(--amarelo);
+  border-radius: 50%;
+  font-size: 1.08rem;
+  transition: .2s;
+}
+
+.redes-sociais a:hover {
+  color: var(--branco);
+  background: var(--azul-medio);
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   10. RESPONSIVIDADE PARA TABLETS
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 13px 22px;
+    padding: 15px 4%;
+  }
+
+  header .logo {
+    margin-right: auto;
+  }
+
+  header nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  header .acoes {
+    margin-left: auto;
+  }
+
+  .hero {
+    gap: 30px;
+  }
+
+  .cards-destaques,
+  .cards-beneficios,
+  .cards-para-empresas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #pesquisar-vagas {
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+}
+
+/* =====================================================
+   11. RESPONSIVIDADE PARA CELULARES
+===================================================== */
+
+@media (max-width: 700px) {
+
+  html {
+    scroll-padding-top: 145px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    position: sticky;
+    min-height: auto;
+    padding: 13px 5%;
+  }
+
+  header .logo {
+    margin: 0 auto;
+    font-size: 1.35rem;
+  }
+
+  header nav {
+    order: 2;
+    gap: 9px 16px;
+  }
+
+  header nav a {
+    font-size: .83rem;
+  }
+
+  header .acoes {
+    order: 3;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .barra-busca {
+    flex: 1;
+    max-width: 230px;
+  }
+
+  .btn-entrar,
+  .btn.cadastro {
+    min-height: 39px;
+    padding: 8px 13px;
+    font-size: .87rem;
+  }
+
+  /* INÍCIO */
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    min-height: 0;
+    padding: 55px 7% 50px;
+    text-align: center;
+  }
+
+  .hero-texto {
+    margin: 0 auto;
+  }
+
+  .hero-texto p {
+    font-size: 1rem;
+  }
+
+  .hero-imagem {
+    width: min(100%, 420px);
+    min-height: 310px;
+    margin: 0 auto;
+  }
+
+  .hero-imagem > img:first-child {
+    max-height: 280px;
+  }
+
+  .hero-imagem h2 {
+    font-size: 1.08rem;
+  }
+
+  .destaques,
+  .beneficios,
+  .anunciar,
+  .destaques-vagas {
+    padding: 55px 6%;
+  }
+
+  .cards-destaques,
+  .cards-beneficios,
+  .cards-para-empresas,
+  .cards-vagas {
+    grid-template-columns: 1fr;
+  }
+
+  .card-destaque,
+  .card-beneficio {
+    min-height: 0;
+  }
+
+  .beneficios > p {
+    margin-top: -17px;
+  }
+
+  /* PARA EMPRESAS */
+
+  .hero-para-empresas {
+    grid-template-columns: 1fr;
     gap: 18px;
-    font-size: 21px;
+    min-height: 0;
+    padding: 45px 7%;
+    text-align: center;
+  }
+
+  .hero-para-empresas > img {
+    grid-column: auto;
+    grid-row: auto;
+    max-height: 250px;
+  }
+
+  .hero-para-empresas h1 {
+    font-size: 2.35rem;
+  }
+
+  .hero-para-empresas .anunciar-vagas {
+    justify-self: center;
+  }
+
+  /* BANNERS */
+
+  .banners {
+    gap: 11px;
+    margin: 45px auto;
+    padding: 42px 22px;
+  }
+
+  .banner-para-empresas,
+  .banner-vagas {
+    width: calc(100% - 30px);
+  }
+
+  /* VAGAS */
+
+  .hero-vagas {
+    align-items: center;
+    min-height: 0;
+    padding: 48px 7% 0;
+    text-align: center;
+  }
+
+  .hero-vagas > img:first-of-type {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-vagas > img:last-of-type {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(78%, 330px);
+    max-height: 290px;
+    margin: 15px auto 0;
+  }
+
+  #pesquisar-vagas {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 25px 5% 55px;
+    padding: 20px;
+  }
+
+  #pesquisar-vagas h2 {
+    font-size: 1.3rem;
+  }
+
+  .card-vaga {
+    min-height: 0;
+  }
+
+  /* RODAPÉ */
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px 6%;
+    text-align: center;
+  }
+
+  footer nav {
+    gap: 12px 17px;
+  }
+
+  footer nav a {
+    font-size: .85rem;
+  }
+
+  .redes-sociais {
+    justify-content: center;
+  }
+
+  .card-demo {
+    padding: 27px 22px;
+  }
+
+  .btn-claro {
+    margin-left: 0;
+  }
 }
 
-/* =========================
-   AJUSTES PARA TABLETS
-========================= */
+/* CELULARES MENORES */
 
-@media (max-width: 900px) {
+@media (max-width: 380px) {
 
-    header {
-        flex-wrap: wrap;
-    }
+  header nav {
+    gap: 8px 12px;
+  }
 
-    header nav {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+  header nav a {
+    font-size: .78rem;
+  }
 
-    .hero-texto h1 {
-        font-size: 34px;
-    }
+  .acoes {
+    gap: 7px;
+  }
 
-    .cards-destaques {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .btn-entrar,
+  .btn.cadastro {
+    padding: 7px 10px;
+    font-size: .8rem;
+  }
+
+  .barra-busca {
+    width: 125px;
+  }
 }
 
-/* =========================
-   AJUSTES PARA CELULARES
-========================= */
+/* =====================================================
+   12. ACESSIBILIDADE
+===================================================== */
 
-@media (max-width: 600px) {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(255, 202, 40, .75);
+  outline-offset: 3px;
+}
 
-    header {
-        justify-content: center;
-    }
+@media (prefers-reduced-motion: reduce) {
 
-    header nav {
-        justify-content: center;
-    }
-
-    .acoes {
-        justify-content: center;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 45px 7%;
-    }
-
-    .hero-texto,
-    .hero-imagem {
-        width: 100%;
-    }
-
-    .hero-texto h1 {
-        font-size: 35px;
-    }
-
-    .hero-texto p {
-        margin-bottom: 25px;
-    }
-
-    .hero-imagem {
-        min-height: 300px;
-        background-size: contain;
-        background-position: center;
-    }
-
-    .cards-destaques,
-    .cards-beneficios {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer nav {
-        justify-content: center;
-    }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
