@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Entre na conta da sua empresa no Primeiro Passo para divulgar vagas e encontrar jovens talentos.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Empresa | Primeiro Passo</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
+        <header>
+            <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
+            <nav>
+                <a href="index.html">Sobre</a>
+                <a href="curso.html">Curso</a>
+                <a href="vagas.html">Vagas</a>
+                <a href="para-empresas.html">Para empresas</a>
+                <a href="fale-conosco.html">Fale conosco</a>
+            </nav>
+            <div class="acoes">
+                <button type="button" class="btn-lupa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
+                <a href="login-empresa.html" class="btn-entrar">Entrar</a>
+                <a href="cadastro-empresas.html" class="btn cadastro">Cadastre-se</a>
+            </div>
+        </header> <!-- fim cabeçalho -->
+
+        <main>
+            <!-- ========== HERO: texto à esquerda + formulário de login à direita ========== -->
+            <section class="hero-login">
+                <!-- Lado esquerdo: título, texto e robô decorativo -->
+                <div class="hero-texto-login">
+                    <h1>Faça seu <span>Login aqui!</span></h1>
+                    <p>Faça login para divulgar suas vagas, encontrar talentos e conectar sua empresa aos profissionais ideais.</p>
+                    <img src="img/icones/login-empresa/icone-robo-empresa.png" alt="icone de robô">
+                </div> <!-- fim .hero-texto-login -->
+
+                 <!-- Lado direito: formulário -->
+                <div class="hero-formulario-login">
+                    <img src="img/icones/icone-predio-escuro.png" alt="icone de predio">
+                    <h2>Login</h2>
+                    <p>Preencha seus dados abaixo para entrar em sua conta </p>
+
+                    <form action="" method="post" class="form-login-empresa">
+                        <div class="campo">
+                            <img src="img/icones/icone-carta.png" alt="icone de carta">
+                            <input type="text" name="usuario" id="usuario" placeholder="Id do usuário ou E-mail Corporativo" required>
+                        </div>
+                        <div class="campo">
+                            <img src="img/icones/icone-cadeado.png" alt="icone de cadeado">
+                            <input type="password" name="senha" id="senha" placeholder="Senha" required> 
+                            <button type="button" class="btn-olho"><img src="img/icones/icone-senha.png" alt="icone de olho"></button>
+                        </div>
+                        <input type="checkbox" name="termos" id="termos">
+                        <label for="termos">Eu aceito os <a href="politica-termos.html">Termos de Uso</a> e a <a href="politica-termos.html">Política de Privacidade</a>.</label>
+
+                        <button type="submit" class="btn btn-login">Entrar<img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+
+                        <img src="img/icones/icone-linha-esquerda.png" alt="icone de linha"> ou <img src="img/icones/icone-linha-direita.png" alt="icone de linha">
+
+                        <button type="button" class="btn-google" data-card="login-google"><img src="img/icones/icone-google.png" alt="icone Google">Continuar com o Google</button>
+                        <button type="button" class="btn-microsoft" data-card="login-microsoft"><img src="img/icones/icone-microsoft.png" alt="icone Microsoft">Continuar com a Microsoft</button>
+
+                        <p>Não possui uma conta?<a href="cadastro-empresas.html">Faça seu cadastro</a>.</p>
+                    </form> <!-- fim fomulário -->
+                </div>
+            </section>
+        </main>
+
+        <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
+        <footer>
+            <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
+            <nav>
+                <a href="index.html">Sobre</a>
+                <a href="curso.html">Curso</a>
+                <a href="vagas.html">Vagas</a>
+                <a href="para-empresas.html">Para empresas</a>
+                <a href="fale-conosco.html">Fale conosco</a>
+                <a href="politica-termos.html">Termos de Uso</a>
+                <a href="politica-termos.html">Políticas de Privacidade</a>
+            </nav>
+            <div class="redes-sociais">
+                <a href="https://www.instagram.com/primeiropasso.proa/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.whatsapp.com" target="_blank" rel="noopener" aria-label="Whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </footer> <!-- fim rodapé -->
+
+        <!-- ========== POP-UPS DE DEMONSTRAÇÃO: 3 cards, escondidos ========== -->
+        <div class="cards-demonstracao">
+            <!-- Pop-up 1: Google -->
+            <div class="card-demo" id="login-google">
+                <img src="img/icones/icone-predio-escuro.png" alt="">
+                <span>Demonstração do protótipo</span>
+                <h2>Login com o Google</h2>
+                <p>No site, este botão abrirá a autenticação do Google. Nesta demonstração, não há conexão com a sua conta e nem coleta de dados.</p>
+                <button type="button" class="btn amarelo-popup btn-fechar">Voltar ao formulário</button>
+            </div> <!-- fim pop-up Google -->
+
+            <!-- Pop-up 2: Microsoft -->
+            <div class="card-demo" id="login-microsoft">
+                <img src="img/icones/icone-predio-escuro.png" alt="">
+                <span>Demonstração do protótipo</span>
+                <h2>Login com a Microsoft</h2>
+                <p>No site, este botão abrirá a autenticação da Microsoft. Nesta demonstração, não há conexão com a sua conta e nem coleta de dados.</p>
+                <button type="button" class="btn amarelo-popup btn-fechar">Voltar ao formulário</button>
+            </div> <!-- fim pop-up Microsoft -->
+        </div> <!-- fim pop-ups -->
+        <script src="script.js"></script>
+  </body>
+</html>
