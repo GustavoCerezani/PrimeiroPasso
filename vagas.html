@@ -11,7 +11,9 @@
   <body>
     <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
+      <a href="index.html" class="logo">
+        <img src="img/icones/Logo.png" alt="logo primeiro passo">
+      </a>
       <nav>
         <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
@@ -20,7 +22,7 @@
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button type="button" class="btn-lupa">
+        <button type="button" class="btn-lupa" aria-label="Buscar">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
@@ -33,7 +35,6 @@
       <!-- ========== HERO: Título + botão + foto ========== -->
       <section class="hero-vagas">
         <h1>Vagas de <span>Emprego</span></h1>
-        <img src="img/icones/icone-linha-unica.png" alt="icone de linha">
         <p>Encontre a oportunidade ideal para dar o primeiro passo na sua carreira.</p>
 
         <a href="#pesquisar-vagas" class="btn buscar-vagas">
@@ -55,7 +56,7 @@
         </div>
         <div class="select">
           <select name="area" id="area" required>
-            <option value="">Todas as Áreas</option>
+            <option value="todos">Todas as Áreas</option>
             <option value="tecnologia">Tecnologia</option>
             <option value="administracao">Administração</option>
             <option value="design">Design</option>
@@ -100,7 +101,7 @@
             <h3>Atendente</h3>
             <p>Osasco - SP</p>
             <p class="detalhes-vagas">
-              <img src="img/icones/icone-relogio.png" alt="icone de relogio">24h/Semanal
+              <img src="img/icones/icone-relogio.png" alt="icone de relogio"> 24h/Semanal
             </p> 
             <a href="login-usuario.html" class="btn-detalhes" data-card="vaga-atendente">Ver detalhes <img src="img/icones/vagas/icone-seta-branca.png" alt="icone de seta"></a>
           </div> <!-- fim card 3 -->
