@@ -13,7 +13,10 @@
   <body>
     <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
+      <a href="index.html" class="logo">
+        <img src="img/icones/Logo.png" alt="logo primeiro passo">
+      </a>
+
       <nav>
         <a href="index.html" aria-current="page">Sobre</a>
         <a href="curso.html">Curso</a>
@@ -21,9 +24,10 @@
         <a href="para-empresas.html">Para empresas</a>
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
+
       <!-- Ações: busca, login e cadastro -->
       <div class="acoes">
-        <button type="button" class="btn-lupa">
+        <button type="button" class="btn-lupa" aria-label="Buscar">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
@@ -36,9 +40,9 @@
       <!-- ========== HERO: título principal + imagem ========== -->
       <section class="hero">
         <div class="hero-texto">
-          <h1>Seu primeiro emprego está <span>aqui!</span></h1>
+          <h1>Seu primeiro <br> emprego está <br><span>aqui!</span></h1>
           <p>O <span>Primeiro Passo</span> é um portal feito para você, jovem, que quer começar a sua vida profissional. Aqui você encontra vagas, cursos e dicas para construir o seu futuro. </p>
-          <a href="vagas.html" class="btn vagas-index">Ver vagas <img src="img/icones/icone-seta.png" alt="icone de seta"></a>
+          <a href="vagas.html" class="btn-vagas-index">Ver vagas <img src="img/icones/icone-seta.png" alt="icone de seta"></a>
         </div>
         <!-- Lado direito: foto do jovem, frase e linha decorativa -->
         <div class="hero-imagem">
@@ -52,33 +56,27 @@
       <section class="destaques">
         <h2>Destaques:</h2>
         <div class="cards-destaques">
-          <a href="vagas.html">
-            <div class="card-destaque">
-              <img src="img/icones/index/icone-mala.png" alt="icone de mala">
-              <h3>Vagas de primeiro emprego</h3>
-              <p>Oportunidades para quem deseja começar a trabalhar.</p>
-            </div>
+          <a href="vagas.html" class="card-destaque">
+            <img src="img/icones/index/icone-mala.png" alt="icone de mala">
+            <h3>Vagas de primeiro emprego</h3>
+            <p>Oportunidades para quem deseja começar a trabalhar.</p>
           </a>
-          <a href="vagas.html">
-            <div class="card-destaque">
-              <img src="img/icones/index/icone-monitor.png" alt="icone de monitor">
-              <h3>Estágio</h3>
-              <p>Coloque seus conhecimentos em prática.</p>
-            </div>
+          <a href="vagas.html" class="card-destaque">
+            <img src="img/icones/index/icone-monitor.png" alt="icone de monitor">
+            <h3>Estágio</h3>
+            <p>Coloque seus conhecimentos em prática.</p>
           </a>
-          <a href="vagas.html">
+          <a href="vagas.html" class="card-destaque">
             <div class="card-destaque">
               <img src="img/icones/index/icone-capelo-index.png" alt="icone de capelo">
               <h3>Jovem Aprendiz</h3>
               <p>Vagas para jovens que querem aprender e se desenvolver.</p>
             </div>
           </a>
-          <a href="curso.html">
-            <div class="card-destaque">
-              <img src="img/icones/index/icone-lampada-clara.png" alt="icone de lampada">
-              <h3>Dicas de carreira</h3>
-              <p>Conselhos e orientações para construir um futuro melhor.</p>
-            </div>
+          <a href="curso.html" class="card-destaque">
+            <img src="img/icones/index/icone-lampada-clara.png" alt="icone de lampada">
+            <h3>Dicas de carreira</h3>
+            <p>Conselhos e orientações para construir um futuro melhor.</p>
           </a>
         </div>
       </section> <!-- fim .destaques -->
