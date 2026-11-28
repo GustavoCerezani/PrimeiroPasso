@@ -5,13 +5,15 @@
     <meta name="description" content="Entre na sua conta do Primeiro Passo para ver vagas, cursos e dicas de carreira.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Primeiro Passo</title> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
+      <a href="index.html" class="logo">
+        <img src="img/icones/Logo.png" alt="logo primeiro passo">
+      </a>
       <nav>
         <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
@@ -20,7 +22,7 @@
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button type="button" class="btn-lupa">
+        <button type="button" class="btn-lupa" aria-label="Buscar">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
@@ -30,46 +32,46 @@
     </header> <!-- fim cabeçalho -->
 
     <main>
-        <!-- ========== HERO: texto à esquerda + formulário de login à direita ========== -->
-        <section class="hero-login">
-            <!-- Lado esquerdo: título, texto e robô decorativo -->
-            <div class="hero-texto-login">
-                <h1>Faça seu <span>Login aqui!</span></h1>
-                <p>Faça login para explorar mais oportunidades e encontrar a vaga ideal para você.</p>
-                <img src="img/icones/login-usuario/icone-robo-login.png" alt="icone de robô">
-            </div> <!-- fim .hero-texto-login -->
+      <!-- ========== HERO: texto à esquerda + formulário de login à direita ========== -->
+      <section class="hero-login">
+        <!-- Lado esquerdo: título, texto e robô decorativo -->
+        <div class="hero-texto-login">
+          <h1>Faça seu <span>Login aqui!</span></h1>
+          <p>Faça login para explorar mais oportunidades e encontrar a vaga ideal para você.</p>
+          <img src="img/icones/login-usuario/icone-robo-login.png" alt="icone de robô">
+        </div> <!-- fim .hero-texto-login -->
 
-            <!-- Lado direito: formulário -->
-            <div class="hero-formulario-login">
-                <img src="img/icones/icone-usuario.png" alt="icone de usuario">
-                <h2>Login</h2>
-                <p>Preencha seus dados abaixo para entrar em sua conta </p>
+        <!-- Lado direito: formulário -->
+        <div class="hero-formulario-login">
+          <img src="img/icones/icone-usuario.png" alt="icone de usuario">
+          <h2>Login</h2>
+          <p>Preencha seus dados abaixo para entrar em sua conta </p>
 
-                <form action="" method="post" class="form-login">
-                  <div class="campo">
-                    <img src="img/icones/icone-carta.png" alt="icone de carta">
-                    <input type="text" name="usuario" id="usuario" placeholder="Id do usuário ou E-mail" required>
-                  </div>
-                  <div class="campo">
-                    <img src="img/icones/icone-cadeado.png" alt="icone de cadeado">
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required> 
-                    <button type="button"><img src="img/icones/icone-senha.png" alt="icone de olho"></button>
-                  </div>
-
-                  <input type="checkbox" name="termos" id="termos">
-                  <label for="termos">Eu aceito os <a href="politica-termos.html">Termos de Uso</a> e a <a href="politica-termos.html">Política de Privacidade</a>.</label>
-
-                  <button type="submit" class="btn btn-login">Entrar<img src="img/icones/icone-seta.png" alt="icone de seta"></button>
-
-                  <img src="img/icones/icone-linha-esquerda.png" alt="icone de linha"> ou <img src="img/icones/icone-linha-direita.png" alt="icone de linha">
-
-                  <button type="button" class="btn-google" data-card="login-google"><img src="img/icones/icone-google.png" alt="icone Google">Continuar com o Google</button>
-                  <button type="button" class="btn-microsoft" data-card="login-microsoft"><img src="img/icones/icone-microsoft.png" alt="icone Microsoft">Continuar a Microsoft</button>
-
-                  <p>Não possui uma conta?<a href="cadastro-usuario.html">Faça seu cadastro</a>.</p>
-                </form> <!-- fim formulário -->
+          <form action="" method="post" class="form-login">
+            <div class="campo">
+              <img src="img/icones/icone-carta.png" alt="icone de carta">
+              <input type="text" name="usuario" id="usuario" placeholder="Id do usuário ou E-mail" required>
             </div>
-        </section>
+            <div class="campo">
+              <img src="img/icones/icone-cadeado.png" alt="icone de cadeado">
+              <input type="password" name="senha" id="senha" placeholder="Senha" required> 
+              <button type="button"><img src="img/icones/icone-senha.png" alt="icone de olho"></button>
+            </div>
+
+            <input type="checkbox" name="termos" id="termos">
+            <label for="termos">Eu aceito os <a href="politica-termos.html">Termos de Uso</a> e a <a href="politica-termos.html">Política de Privacidade</a>.</label>
+
+            <button type="submit" class="btn btn-login">Entrar<img src="img/icones/icone-seta.png" alt="icone de seta"></button>
+
+            <img src="img/icones/icone-linha-esquerda.png" alt="icone de linha"> ou <img src="img/icones/icone-linha-direita.png" alt="icone de linha">
+
+            <button type="button" class="btn-google" data-card="login-google"><img src="img/icones/icone-google.png" alt="icone Google">Continuar com o Google</button>
+            <button type="button" class="btn-microsoft" data-card="login-microsoft"><img src="img/icones/icone-microsoft.png" alt="icone Microsoft">Continuar com a Microsoft</button>
+
+            <p>Não possui uma conta?<a href="cadastro-usuario.html">Faça seu cadastro</a>.</p>
+          </form> <!-- fim formulário -->
+        </div>
+      </section>
     </main>
 
     <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
@@ -97,7 +99,7 @@
       </div>
     </footer> <!-- fim rodapé -->
 
-        <!-- ========== POP-UPS DE DEMONSTRAÇÃO: 2 cards, escondidos ========== -->
+    <!-- ========== POP-UPS DE DEMONSTRAÇÃO: 2 cards, escondidos ========== -->
     <div class="cards-demonstracao">
       <!-- Pop-up 1: Google -->
       <div class="card-demo" id="login-google">

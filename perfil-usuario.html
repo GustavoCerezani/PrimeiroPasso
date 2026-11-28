@@ -2,10 +2,10 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Encontre vagas de primeiro emprego, jovem aprendiz e estágio e dê o primeiro passo na sua carreira.">
+    <meta name="description" content="Acompanhe seu perfil, suas candidaturas e o andamento das vagas no Primeiro Passo.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil | Primeiro Passo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -22,100 +22,126 @@
     </header> <!--FIM CABEÇALHO-->
     
     <main>
+      <!-- ========== HERO PERFIL: foto e dados do usuário ========== -->
       <section class="hero-perfil">
+        <!-- icone e imagem -->
         <div class="hero-icone">
           <img src="img/icones/icone-usuario.png" alt="icone de usuario">
-          <img src="img/icones/perfil-usuario/ìcone trocar foto.png" alt="icone de lapis">
-        </div>
+          <img src="img/icones/perfil-usuario/icone-lapis.png" alt="icone de lapis">
+        </div> <!-- fim -->
+
+        <!-- hero texto -->
         <div class="hero-texto-perfil">
           <h1>Gabriel Sena</h1>
           <p>Sena.gabriel@gmail.com</p>
-        </div>
-      </section>
+        </div> <!-- fim -->
+      </section> <!-- fim .hero-perfil -->
+
+      <!-- ========== RESUMO DE CANDIDATURAS: contadores por etapa ========== -->
       <section class="candidaturas">
         <h2>Candidaturas</h2>
-        <div>
+        
+        <div class="card-status">
           <h3>Enviadas</h3>
           <p>25</p>
         </div>
-        <div>
+
+        <div class="card-status">
           <h3>Em Análise</h3>
           <p>23</p>
         </div>
-        <div>
+
+        <div class="card-status">
           <h3>Selecionado</h3>
           <p>17</p>
         </div>
-        <div>
+
+        <div class="card-status">
           <h3>Finalista</h3>
           <p>10</p>
         </div>
-      </section>
+
+      </section> <!-- fim .candidaturas -->
+
+      <!-- ========== RESUMO DE CANDIDATURAS: contadores por etapa ========== -->
       <section class="candidaturas-enviadas">
-        <div>
+
+        <div class="lista-candidaturas">
           <img src="img/icones/perfil-usuario/icone-robo-direita.png" alt="icone de robô">
-          <div>
+
+          <!-- Candidatura 1 -->
+          <div class="card-candidatura">
             <h2>Auxiliar De Logística Shopee SP02 - SEM EXPERIÊNCIA</h2>
             <p>Randstad - Matriz, São Paulo - SP, a 10,8 Km de você.</p>
 
             <a href="#" class="btn-adequacao">
               <p>Sua Adequação</p>
-              <p>Vizualizar</p>
+              <p>Visualizar</p>
             </a>
 
-            <a href="#" class="bnt-requisitos">
+            <a href="#" class="btn-requisitos">
               <p>Requisitos</p>
-              <p>Vizualizar</p>
+              <p>Visualizar</p>
             </a>
 
-            <div>
+            <div class="card-etapa">
               <p>Enviada 10/set</p>
             </div>
-            <div>
+
+            <div class="card-etapa">
               <p>Em Análise</p>
             </div>
-            <div>
+
+            <div class="card-etapa">
               <p>Selecionado</p>
             </div>
-            <div>
+
+            <div class="card-etapa-finalista">
               <p>Finalista</p>
             </div>
-          </div>
-        </div>
 
-        <div>
+          </div> <!-- fim candidatura 1 -->
+        </div> <!-- fim lista candidatura -->
+
+        <div class="lista-candidaturas">
           <img src="img/icones/icone-robo-esquerda.png" alt="icone de robô">
-          <div>
+
+          <!-- Candidatura 2 -->
+          <div class="card-candidatura">
             <h2>Auxiliar De Logística Shopee SP02 - SEM EXPERIÊNCIA</h2>
             <p>Randstad - Matriz, São Paulo - SP, a 10,8 Km de você.</p>
 
             <a href="#" class="btn-adequacao">
               <p>Sua Adequação</p>
-              <p>Vizualizar</p>
+              <p>Visualizar</p>
             </a>
 
-            <a href="#" class="bnt-requisitos">
+            <a href="#" class="btn-requisitos">
               <p>Requisitos</p>
-              <p>Vizualizar</p>
+              <p>Visualizar</p>
             </a>
 
-            <div>
+            <div class="card-etapa">
               <p>Enviada 10/set</p>
             </div>
-            <div>
+
+            <div class="card-etapa">
               <p>Em Análise</p>
             </div>
-            <div>
+
+            <div class="card-etapa">
               <p>Selecionado</p>
             </div>
-            <div>
+
+            <div class="card-etapa-finalista">
               <p>Finalista</p>
             </div>
-          </div>
-        </div>
 
-        <a href="#">Ver todas as candidaturas <img src="img/icones/icone-seta.png" alt="icone de seta"></a>
-      </section>
+          </div> <!-- fim candidatura 2 -->
+        </div> <!-- fim lista candidatura -->
+
+        <a href="#" class="btn-ver-todas">Ver todas as candidaturas <img src="img/icones/icone-seta.png" alt="icone de seta"></a>
+      </section> <!-- fim section candidaturas -->
     </main>
  
     <!-- ========== RODAPÉ: logo + menu + redes sociais ========== -->
@@ -123,7 +149,7 @@
       <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
       <nav>
         <a href="curso.html">Curso</a>
-        <a href="vagas.html">Vagas</a>
+        <a href="portal-de-vagas.html">Vagas</a>
         <a href="fale-conosco.html">Fale conosco</a>
         <a href="curriculo.html">Curriculo</a>
         <a href="politica-termos.html">Termos de Uso</a>
