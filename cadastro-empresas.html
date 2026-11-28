@@ -5,13 +5,15 @@
     <meta name="description" content="Cadastre sua empresa no Primeiro Passo, divulgue vagas e encontre novos talentos.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre sua empresa | Primeiro Passo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- ========== CABEÇALHO: logo + menu + ações ========== -->
     <header>
-      <a href="index.html" class="logo"><img src="img/icones/Logo.png" alt="logo primeiro passo"></a>
+      <a href="index.html" class="logo">
+        <img src="img/icones/Logo.png" alt="logo primeiro passo">
+      </a>
       <nav>
         <a href="index.html">Sobre</a>
         <a href="curso.html">Curso</a>
@@ -20,11 +22,11 @@
         <a href="fale-conosco.html">Fale conosco</a>
       </nav>
       <div class="acoes">
-        <button type="button" class="btn-lupa">
+        <button type="button" class="btn-lupa" aria-label="Buscar">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <input type="search" class="barra-busca" placeholder="Buscar vagas e cursos">
-        <a href="login-usuario.html" class="btn-entrar">Entrar</a>
+        <a href="login-empresa.html" class="btn-entrar">Entrar</a>
         <a href="cadastro-empresas.html" class="btn cadastro">Cadastre-se</a>
       </div>
     </header> <!-- fim cabeçalho -->
@@ -62,13 +64,13 @@
 
           <form action="" method="post" class="form-cadastro">
             <label for="nome-empresa">Nome da empresa</label>
-            <input type="text" nome="nome-empresa" id="nome-empresa" placeholder="Digite a razão social ou nome fantasia" required>
+            <input type="text" name="nome-empresa" id="nome-empresa" placeholder="Digite a razão social ou nome fantasia" required>
 
             <label for="cnpj">CNPJ</label>
             <input type="text" name="cnpj" id="cnpj" placeholder="00.000.000/0000-00" required>
 
             <label for="responsavel">Nome do responsável</label>
-            <input type="text" name="responsalvel" id="responsavel" placeholder="Digite seu nome completo" required>
+            <input type="text" name="responsavel" id="responsavel" placeholder="Digite seu nome completo" required>
 
             <label for="email">E-mail corporativo</label>
             <input type="email" name="email" id="email" placeholder="nome@suaempresa.com.br" required>
@@ -84,7 +86,7 @@
 
             <button type="submit" class="btn empresa-cadastro">Cadastrar Empresa</button>
 
-            <p>Já tem uma conta?<a href="login.html">Faça Login</a></p>
+            <p>Já tem uma conta? <a href="login-empresa.html"> Faça Login</a></p>
           </form> <!-- fim .form-cadastro -->
         </div>
       </section> <!-- fim .hero-cadastro-empresas -->
